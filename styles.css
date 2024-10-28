@@ -9,18 +9,11 @@
     border: solid 1px;
     padding: 50px
 }
-<<<<<<< HEAD
 .contenedor{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.x{
-    height: 100px;
-    font-size: 50px;
-    border:solid 1px;
-    margin-bottom: 10px
-=======
 
 .tableroJuego{
     width: 30%;
@@ -42,5 +35,4 @@
     gap: 10px;                             /* Espacio entre celdas */
     justify-content: center;               /* Centrar la cuadrícula en el contenedor */
     align-items: center;                   /* Centrar los elementos en la cuadrícula */
->>>>>>> 6e2394f (Agregado tablero grid y victorias B definido)
 }

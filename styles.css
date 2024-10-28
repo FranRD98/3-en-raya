@@ -5,9 +5,11 @@
     justify-content: space-around;
 }
 .tablero{
+    width: 15%;
     border: solid 1px;
     padding: 50px
 }
+<<<<<<< HEAD
 .contenedor{
     display: flex;
     flex-direction: column;
@@ -18,4 +20,27 @@
     font-size: 50px;
     border:solid 1px;
     margin-bottom: 10px
+=======
+
+.tableroJuego{
+    width: 30%;
+    border: solid 1px;
+    padding: 50px
+}
+
+.ficha {
+    height: 100px; 
+    width: 100px; 
+    border: solid 1px; 
+    margin-bottom: 10px
+}
+
+.grid-tablero {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas de tamaño igual */
+    grid-template-rows: repeat(3, 1fr);    /* 3 filas de tamaño igual */
+    gap: 10px;                             /* Espacio entre celdas */
+    justify-content: center;               /* Centrar la cuadrícula en el contenedor */
+    align-items: center;                   /* Centrar los elementos en la cuadrícula */
+>>>>>>> 6e2394f (Agregado tablero grid y victorias B definido)
 }

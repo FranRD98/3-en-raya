@@ -28,6 +28,17 @@
     margin-bottom: 10px
 }
 
+.fichaTablero {
+    height: 100px; 
+    width: 100px; 
+    border: solid 1px; 
+    margin-bottom: 10px
+}
+
+.drag-over { 
+    border: dashed 3px red; 
+} 
+
 .grid-tablero {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 columnas de tamaño igual */

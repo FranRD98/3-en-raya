@@ -1,0 +1,11 @@
+/* Contenedor del juego */
+#game{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.tablero{
+    border: solid 1px;
+    padding: 50px
+}

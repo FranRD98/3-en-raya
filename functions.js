@@ -38,13 +38,12 @@ function drop(e){
     e.target.classList.remove('drag-over');
 
     e.target.appendChild(draggable);
-
+    // verifica el ultimo elemento draggeado
     if(id.startsWith('fichaA')){
         ultimaFicha = 'A';
     } else if(id.startsWith('fichaB')){
         ultimaFicha = 'B';    
-    }
-   
+    }   
     // Actualizamos el turno en el título del HTML con una imagen
     const turnoElement = document.getElementById("turno");
     const imagenTurno = document.createElement("img");

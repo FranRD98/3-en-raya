@@ -1,11 +1,17 @@
 # PRÁCTICA – 3 en Raya.
 
+## Sobre el proyecto
+Se trata de un proyecto realizado en clase para aprender conceptos de Javascript y también utilizar GIT para el control de versiones. El proyecto elegido se trata de un juego llamado '3 en raya', el cual 2 jugadores mediante la función 'drag&drop' podrán arrastrar sus fichas hacía el tablero, el primero que consiga hacer 3 en una misma raya, será el ganador.
+
+## A tener en cuenta
+1. Se pueden jugar tantas veces como queramos, el juego detectará el jugador ganador y irá sumando las veces que ha ganado ese jugador.
+2. Para iniciar una nueva partida, deberemos pulsar F5. 
+
 ## ¿Como lo ejecuto?
 Hemos decidido subirlo a la plataforma 'Netlify', puedes acceder desde la sección 'About' del proyecto, a la derecha, o bien desde el siguiente enlace:
 https://3enraya-fran-miguel.netlify.app/
 
-# ENUNCIADO
-
+# ENUNCIADO DEL EJERCICIO
 ## Instrucciones generales:
 1. Esta práctica se realizará en grupos de 2 o 3 personas.
 2. Cada grupo debe crear un repositorio en GitHub para el desarrollo de

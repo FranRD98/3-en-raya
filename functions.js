@@ -2,6 +2,7 @@
 let turnoActual = 'A';
 let victoriasJugadorA = 0;
 let victoriasJugadorB = 0;
+let juegoPausado = false;
 
 // Iniciar el juego al cargar la página
 function comenzar() {
@@ -17,11 +18,11 @@ elementoVictoriasJugadorA.innerHTML = 'Victorias A: ' + victoriasJugadorA;
 let elementoVictoriasJugadorB = document.getElementById('victoriasJugadorB');
 elementoVictoriasJugadorB.innerHTML = 'Victorias B: ' + victoriasJugadorB;
 
-// 1. Obtenemos todas las fichas (tanto jugadores como del tablero)
+// Obtenemos todas las fichas (tanto jugadores como del tablero)
 function inicializarFichas() {
     const fichas = document.querySelectorAll('.ficha');
     
-    // 2. A cada ficha le asignamos el atributo 'draggable', el evento 'DragStart', 'dragover' y el evento 'drop'
+    // A cada ficha le asignamos el atributo 'draggable', el evento 'DragStart', 'dragover' y el evento 'drop'
     fichas.forEach(ficha => {
         ficha.setAttribute('draggable', true); // Permitirá hacer drag
         ficha.addEventListener('dragstart', dragStart); // Se iniciará al iniciar el drag
@@ -71,7 +72,7 @@ function drop(e) {
     const draggable = document.getElementById(id);
     e.target.classList.remove('drag-over');
 
-    // verifica el ultimo elemento draggeado
+    // Verificamos el ultimo elemento draggeado
     if (id.startsWith('fichaA')) {
         ultimaFicha = 'A';
     } else if (id.startsWith('fichaB')) {
@@ -117,6 +118,7 @@ function mostrarTurno() {
     turnoElement.appendChild(imagenTurno);
 }
 
+// Actualizar turno
 function actualizarTurno(){
         // Actualizamos el turno en el título del HTML con una imagen
         const turnoElement = document.getElementById("turno");
@@ -134,7 +136,10 @@ function actualizarTurno(){
 
 // Función que comprueba si la partida ha finalizado
 function comprobar() {
-    const celdas = document.querySelectorAll('.grid-tablero div'); // Obtener todas las celdas
+    // Obtener todas las celdas
+    const celdas = document.querySelectorAll('.grid-tablero div'); 
+
+    // Indicamos las combinaciones ganadoras
     const combinacionesGanadoras = [
         [0, 1, 2], // Fila 1
         [3, 4, 5], // Fila 2
@@ -158,10 +163,32 @@ function comprobar() {
             if (fichaA.src.includes('x.jpg')) {
                 alert('¡Jugador A gana!');
                 victoriasJugadorA++; // Incrementar victorias A
+                juegoPausado = true;
             } else {
                 alert('¡Jugador B gana!');
                 victoriasJugadorB++; // Incrementar victorias B
+                juegoPausado = true;
             }
+
+            // Obtenemos todas las fichas
+            const fichasTablero = document.querySelectorAll('.grid-tablero div img');
+            const fichasA = document.querySelectorAll('[id^="fichaA"]');
+            const fichasB = document.querySelectorAll('[id^="fichaB"]');
+
+            // Cuando el juego esta pausado porque alguien ha ganado, no se podran mover las fichas
+            if(juegoPausado){
+                fichasTablero.forEach(ficha => ficha.draggable = false);
+                fichasA.forEach(ficha => ficha.draggable = false);
+                fichasB.forEach(ficha => ficha.draggable = false);
+
+            } else {
+                fichasTablero.forEach(ficha => ficha.draggable = true);
+                fichasA.forEach(ficha => ficha.draggable = true);
+                fichasB.forEach(ficha => ficha.draggable = true);
+            }
+
+            juegoPausado = false;
+
             // Actualizar el marcador
             actualizarMarcador();
             return; // Terminar la función

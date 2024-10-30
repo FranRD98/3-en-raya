@@ -1,7 +1,12 @@
-## PRÁCTICA – 3 en Raya.
+# PRÁCTICA – 3 en Raya.
 
-Instrucciones generales:
+## ¿Como lo ejecuto?
+Hemos decidido subirlo a la plataforma 'Netlify', puedes acceder desde la sección 'About' del proyecto, a la derecha, o bien desde el siguiente enlace:
+https://3enraya-fran-miguel.netlify.app/
 
+# ENUNCIADO
+
+## Instrucciones generales:
 1. Esta práctica se realizará en grupos de 2 o 3 personas.
 2. Cada grupo debe crear un repositorio en GitHub para el desarrollo de
     la práctica. Todos los miembros del grupo deben estar agregados como
@@ -14,7 +19,7 @@ Instrucciones generales:
 5. Al finalizar, los grupos deben enviar el enlace al repositorio en lugar de
     un archivo comprimido.
 
-### Práctica:
+## Práctica:
 
 Este ejercicio simula el juego del 3 en raya. El aspecto que debe tener la
 página tiene que ser similar al siguiente:
@@ -25,8 +30,9 @@ Cuando se carga la página nos deberán aparecer las siguientes zonas:
 1. Jugadores. Aquí tendremos las fichas que tiene cada jugador (las 3
     imágenes que os proporciono).
 
+Ejemplo:
 ```
-Ejemplo: Esta imagen indicaría que los jugadores no han empezado a
+Esta imagen indicaría que los jugadores no han empezado a
 jugar ya que tienen las tres fichas cada uno y que el jugador ‘A’ ha
 ganado 5 veces y el ‘B’ ha ganado 2.
 ```
@@ -34,20 +40,21 @@ ganado 5 veces y el ‘B’ ha ganado 2.
     las fichas de cada jugador. En ‘TURNO JUGADOR’ deberá aparecer la
     imagen de la ficha que toca mover.
 
-Ejemplo: Esta imagen nos indica que ha movido una ficha cada jugador y el
+Ejemplo: 
+```
+Esta imagen nos indica que ha movido una ficha cada jugador y el
 turno es para el jugador ‘A’.
+```
 
 La partida no terminará hasta que uno de los dos jugadores consiga el tres en
 raya. En ese momento se abrirá una nueva ventana indicando que jugador ha
 ganado. Para volver a jugar o reiniciar la partida tendremos que pulsar ‘F5’.
-
 
 Una vez se arrastre la ficha de la zona de jugadores al tablero no se podrá
 volver a poner en la zona de jugadores. Las fichas que hay dentro del tablero
 se podrán arrastrar a una nueva posición siempre que no esté ocupada.
 
 ## Consideraciones:
-
 - Las fichas estarán representadas por imágenes en el HTML.
 - Al soltar una ficha sobre una posición del tablero que ya este ocupada,
     se abrirá una ventana indicando que la casilla está ocupada y la ficha
@@ -57,9 +64,7 @@ se podrán arrastrar a una nueva posición siempre que no esté ocupada.
 - Las ventanas se abrirán, mostrarán el mensaje durante 1 segundo y se
     cerrarán automáticamente.
 
-
 ## Funciones:
-
 - comenzar(): En esta función se cargaran/inicializaran todos los
     valores.
 - funciones Drag and Drop necesarias.
@@ -79,7 +84,6 @@ se podrán arrastrar a una nueva posición siempre que no esté ocupada.
     puntuación máxima de 4 puntos.
 
 # Puntuación:
-
 - Código HTML y CSS (1,5pts). No se evalúa que sea responsive.
 - Control Eventos Drag and Drop y funcionalidad de estos.
     o Dragstart (1pto).

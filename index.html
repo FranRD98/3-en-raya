@@ -7,40 +7,61 @@
     <title>3 en raya</title>
 </head>
 <body>
-    <h1 style="text-align: center">Pulsa F5 para reiniciar la partida o volver a jugar</h1>
-    <div id="game">
-        <div id="jugador1" class="tablero">
-            <h2>Victorias A: x</h2>
-            <div class ="contenedor">
-                <img id="fichaA1" class ="ficha" src="imagenes/x.jpg"/>
-                <img id="fichaA2" class ="ficha" src="imagenes/x.jpg"/>
-                <img id="fichaA3" class ="ficha" src="imagenes/x.jpg"/>
-            </div>
-        </div>
-        <div id="tablero" class="tableroJuego">
-            <h2>3 en raya</h2>
-            <div class="grid-tablero">
-                <div class="ficha"></div>
-                <div class="ficha"></div>
-                <div class="ficha"></div>
-                <div class="ficha"></div>
-                <div class="ficha"></div>
-                <div class="ficha"></div>
-                <div class="ficha"></div>
-                <div class="ficha"></div>
-                <div class="ficha"></div>
-            </div>
+    <body>
+        <!-- Título centrado que indica al jugador que puede reiniciar el juego pulsando F5 -->
+        <h1 style="text-align: center">Juego 3 en Raya</h1>
+        
+        <!-- Contenedor principal del juego, con el tablero de cada jugador y el tablero central -->
+        <div id="game">
             
-        </div>
-        <div id="jugador2" class="tablero">
-            <h2>Victorias A: x</h2>
-            <div class ="contenedor">
-                <img id="fichaB1" class ="ficha" src="imagenes/o.jpg"/>
-                <img id="fichaB2" class ="ficha" src="imagenes/o.jpg"/>
-                <img id="fichaB3" class ="ficha" src="imagenes/o.jpg"/>
+            <!-- Sección para el jugador 1, con su nombre y contador de victorias -->
+            <div id="jugador1" class="tablero">
+                <h2>Victorias A: x</h2>
+                
+                <!-- Contenedor de fichas del jugador 1 -->
+                <div class="contenedor">
+                    <!-- Fichas de jugador A (fichaA1, fichaA2, fichaA3) con imagen asociada -->
+                    <img id="fichaA1" class="ficha" src="imagenes/x.jpg"/>
+                    <img id="fichaA2" class="ficha" src="imagenes/x.jpg"/>
+                    <img id="fichaA3" class="ficha" src="imagenes/x.jpg"/>
+                </div>
+            </div>
+    
+            <!-- Tablero central donde se juega al "3 en raya" -->
+            <div id="tablero" class="tableroJuego">
+                <!-- Título del juego y el turno actual del jugador -->
+                <h2>3 en raya</h2>
+                <h3>Turno Jugador:</h3>
+                <div id="turno"></div> <!-- Se muestra el turno del jugador aquí -->
+    
+                <!-- Tablero de 3x3 donde se colocan las fichas para jugar -->
+                <div class="grid-tablero">
+                    <!-- Divs vacíos que representan las casillas en las que los jugadores colocarán sus fichas -->
+                    <div class="ficha"></div>
+                    <div class="ficha"></div>
+                    <div class="ficha"></div>
+                    <div class="ficha"></div>
+                    <div class="ficha"></div>
+                    <div class="ficha"></div>
+                    <div class="ficha"></div>
+                    <div class="ficha"></div>
+                    <div class="ficha"></div>
+                </div>
+            </div>
+    
+            <!-- Sección para el jugador 2, con su nombre y contador de victorias -->
+            <div id="jugador2" class="tablero">
+                <h2>Victorias A: x</h2>
+                
+                <!-- Contenedor de fichas del jugador 2 -->
+                <div class="contenedor">
+                    <!-- Fichas de jugador B (fichaB1, fichaB2, fichaB3) con imagen asociada -->
+                    <img id="fichaB1" class="ficha" src="imagenes/o.jpg"/>
+                    <img id="fichaB2" class="ficha" src="imagenes/o.jpg"/>
+                    <img id="fichaB3" class="ficha" src="imagenes/o.jpg"/>
+                </div>
             </div>
         </div>
-    </div>
     <script src="functions.js"></script>
 </body>
 </html>

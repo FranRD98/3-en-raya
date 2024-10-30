@@ -4,46 +4,49 @@
     flex-direction: row;
     justify-content: space-around;
 }
+/*todas las casillas del juego */
 .tablero{
     width: 15%;
     border: solid 1px;
     padding: 50px
 }
+/*contenedor de las fichas del juego */
 .contenedor{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-
+/*contenedor del tablero del juego*/
 .tableroJuego{
     width: 30%;
     border: solid 1px;
     padding: 50px
 }
-
+/*fichas del juego*/
 .ficha {
     height: 100px; 
     width: 100px; 
     border: solid 1px; 
     margin-bottom: 10px
 }
-
+/*fichas ya puestas en el tablero de juego*/
 .fichaTablero {
     height: 100px; 
     width: 100px; 
     border: solid 1px; 
     margin-bottom: 10px
 }
-
+/*bordes color rojo cuando se haga el drag-over*/
 .drag-over { 
     border: dashed 3px red; 
 } 
 
+/*estilo para la cuadrícula del tablero */
 .grid-tablero {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columnas de tamaño igual */
-    grid-template-rows: repeat(3, 1fr);    /* 3 filas de tamaño igual */
-    gap: 10px;                             /* Espacio entre celdas */
-    justify-content: center;               /* Centrar la cuadrícula en el contenedor */
-    align-items: center;                   /* Centrar los elementos en la cuadrícula */
+    grid-template-columns: repeat(3, 1fr); 
+    grid-template-rows: repeat(3, 1fr);        
+    gap: 10px;                             
+    justify-content: center;               
+    align-items: center;                   
 }

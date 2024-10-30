@@ -18,6 +18,7 @@ inicializarFichas();
 // Obtenemos la imagen mediante el ID (fichaA1.. fichaB2...)
 function dragStart(e) {
     e.dataTransfer.setData('text/plain', e.target.id);
+    posicionInicial = e.target.parentNode; // guarda la posición inicial
 }
 
 // Evitamos que el navegador interfiera y al ponerlos encima habilitamos una clase CSS
@@ -38,8 +39,43 @@ function drop(e) {
     const id = e.dataTransfer.getData('text/plain'); // Recuperamos el id del elemento
     const draggable = document.getElementById(id);
     e.target.classList.remove('drag-over');
+    
+    // verifica el ultimo elemento draggeado
+    if(id.startsWith('fichaA')){
+        ultimaFicha = 'A';
+    } else if(id.startsWith('fichaB')){
+        ultimaFicha = 'B';    
+    } 
 
-    console.log(draggable + ' draggableeee '); // Comprueba si draggable es null
+    // Verificamos si la casilla está ocupada
+    if (e.target.children.length > 0) {
+        alert('Casilla ocupada');
+        // Si la casilla está ocupada, devolvemos la ficha a su posición original
+        posicionInicial.appendChild(draggable);
+        // verifica el ultimo elemento draggeado
+        if(id.startsWith('fichaA')){
+            ultimaFicha = 'B';
+        } else if(id.startsWith('fichaB')){
+            ultimaFicha = 'A';    
+        } 
+    } else {
+        // Si no está ocupada, movemos la ficha a la nueva posición
+        e.target.appendChild(draggable);
+    }    
+  
+    // Actualizamos el turno en el título del HTML con una imagen
+    const turnoElement = document.getElementById("turno");
+    const imagenTurno = document.createElement("img");
+
+    // Cambia la fuente de la imagen dependiendo del turno
+    imagenTurno.src = (ultimaFicha === 'A') ? 'imagenes/o.jpg' : 'imagenes/x.jpg';
+    imagenTurno.alt = `Turno del jugador ${(ultimaFicha === 'A') ? 'B' : 'A'}`;
+    imagenTurno.style.width = '50px'; 
+
+    // Limpiamos el contenido anterior y añadimos la nueva imagen
+    turnoElement.innerHTML = ""; // limpia el contenido anterior
+    turnoElement.appendChild(imagenTurno);
+  
     if (draggable) {
         e.target.appendChild(draggable);
     } else {

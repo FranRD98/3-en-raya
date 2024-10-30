@@ -15,6 +15,7 @@ fichas.forEach(ficha => {
 // Obtenemos la imagen mediante el ID (fichaA1.. fichaB2...)
 function dragStart(e){
     e.dataTransfer.setData('text/plain', e.target.id);
+    posicionInicial = e.target.parentNode; // guarda la posición inicial
 }
 
 // Evitamos que el navegador interfiera y al ponerlos encima habilitamos una clase CSS
@@ -37,13 +38,30 @@ function drop(e){
     const draggable = document.getElementById(id);
     e.target.classList.remove('drag-over');
 
-    e.target.appendChild(draggable);
+    
     // verifica el ultimo elemento draggeado
     if(id.startsWith('fichaA')){
         ultimaFicha = 'A';
     } else if(id.startsWith('fichaB')){
         ultimaFicha = 'B';    
-    }   
+    } 
+
+    // Verificamos si la casilla está ocupada
+    if (e.target.children.length > 0) {
+        alert('Casilla ocupada');
+        // Si la casilla está ocupada, devolvemos la ficha a su posición original
+        posicionInicial.appendChild(draggable);
+        // verifica el ultimo elemento draggeado
+        if(id.startsWith('fichaA')){
+            ultimaFicha = 'B';
+        } else if(id.startsWith('fichaB')){
+            ultimaFicha = 'A';    
+        } 
+    } else {
+        // Si no está ocupada, movemos la ficha a la nueva posición
+        e.target.appendChild(draggable);
+    }    
+  
     // Actualizamos el turno en el título del HTML con una imagen
     const turnoElement = document.getElementById("turno");
     const imagenTurno = document.createElement("img");

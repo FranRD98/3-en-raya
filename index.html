@@ -3,54 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Vincula la hoja de estilos externa -->
     <link rel="stylesheet" href="styles.css">
     <title>3 en raya</title>
 </head>
 <body>
-    <body>
-        <h1 style="text-align: center">Juego 3 en Raya</h1>
-        
-        <div id="game">
+    <!-- Título principal del juego, centrado en la página -->
+    <h1 style="text-align: center">Juego 3 en Raya</h1>
+    
+    <!-- Contenedor principal del juego -->
+    <div id="game">
+    
+        <!-- Sección para el jugador 1 -->
+        <div id="jugador1" class="tablero">
+            <!-- Muestra las victorias del Jugador A -->
+            <h2 id="victoriasJugadorA"></h2>
             
-            <div id="jugador1" class="tablero">
-                <h2 id="victoriasJugadorA"></h2>
-                
-                <div class="contenedor">
-                    <img id="fichaA1" class="ficha" src="imagenes/x.jpg"/>
-                    <img id="fichaA2" class="ficha" src="imagenes/x.jpg"/>
-                    <img id="fichaA3" class="ficha" src="imagenes/x.jpg"/>
-                </div>
-            </div>
-    
-            <div id="tablero" class="tableroJuego">
-                <h3>Turno Jugador:</h3>
-                <div id="turno">
-
-                </div>
-    
-                <div class="grid-tablero">
-                    <div class="ficha"></div>
-                    <div class="ficha"></div>
-                    <div class="ficha"></div>
-                    <div class="ficha"></div>
-                    <div class="ficha"></div>
-                    <div class="ficha"></div>
-                    <div class="ficha"></div>
-                    <div class="ficha"></div>
-                    <div class="ficha"></div>
-                </div>
-            </div>
-    
-            <div id="jugador2" class="tablero">
-                <h2 id="victoriasJugadorB"></h2>
-                
-                <div class="contenedor">
-                    <img id="fichaB1" class="ficha" src="imagenes/o.jpg"/>
-                    <img id="fichaB2" class="ficha" src="imagenes/o.jpg"/>
-                    <img id="fichaB3" class="ficha" src="imagenes/o.jpg"/>
-                </div>
+            <!-- Contenedor para las fichas del jugador 1 -->
+            <div class="contenedor">
+                <img id="fichaA1" class="ficha" src="imagenes/x.jpg"/>
+                <img id="fichaA2" class="ficha" src="imagenes/x.jpg"/>
+                <img id="fichaA3" class="ficha" src="imagenes/x.jpg"/>
             </div>
         </div>
+    
+        <!-- Tablero de juego principal donde se coloca la cuadrícula de 3 en raya -->
+        <div id="tablero" class="tableroJuego">
+            <!-- Mensaje de reinicio, oculto inicialmente con CSS -->
+            <h1 id="oculto" class="oculto">Pulsa F5 para reiniciar</h1>
+            
+            <!-- Indicador de turno del jugador actual -->
+            <h3>Turno Jugador:</h3>
+            <div id="turno"></div>
+    
+            <!-- Cuadrícula de 3x3 para el tablero de juego, con cada celda representada por un div con clase "ficha" -->
+            <div class="grid-tablero">
+                <div class="ficha"></div>
+                <div class="ficha"></div>
+                <div class="ficha"></div>
+                <div class="ficha"></div>
+                <div class="ficha"></div>
+                <div class="ficha"></div>
+                <div class="ficha"></div>
+                <div class="ficha"></div>
+                <div class="ficha"></div>
+            </div>
+        </div>
+    
+        <!-- Sección para el jugador 2 -->
+        <div id="jugador2" class="tablero">
+            <!-- Muestra las victorias del Jugador B -->
+            <h2 id="victoriasJugadorB"></h2>
+            
+            <!-- Contenedor para las fichas del jugador 2 -->
+            <div class="contenedor">
+                <img id="fichaB1" class="ficha" src="imagenes/o.jpg"/>
+                <img id="fichaB2" class="ficha" src="imagenes/o.jpg"/>
+                <img id="fichaB3" class="ficha" src="imagenes/o.jpg"/>
+            </div>
+        </div>
+    </div>
+    <!-- Incluye el archivo JavaScript con las funciones del juego -->
     <script src="functions.js"></script>
 </body>
 </html>
